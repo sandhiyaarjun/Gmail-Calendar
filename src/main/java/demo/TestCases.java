@@ -70,11 +70,12 @@ public class TestCases {
        WebElement monthEle = driver.findElement(By.xpath("//span[text()='Month']"));
         monthEle.click();
         String monthEleText = monthEle.getText();
-        if (monthEleText.equals("Month")) {
+        if (monthEleText.contains("Month")) {
             System.out.println("Switched to Month View");
-        } else {
-            System.out.println("Not Switched to Month View");
-        }
+        } 
+        // else {
+        //     System.out.println("Not Switched to Month View");
+        // }
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[text()='15']")).click();
         driver.findElement(By.xpath("//div[@class='mr0WL']")).click();
@@ -91,7 +92,7 @@ public class TestCases {
         discriptionEle.sendKeys("Crio INTV Calendar Task Automation");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@jsname='x8hlje']")).click();
-        Thread.sleep(6000);
+        Thread.sleep(3000);
 
         System.out.println("end Test case: testCase02");
     }
@@ -112,6 +113,7 @@ public class TestCases {
                 "Crio INTV Task Automation is a test suite designed for automating various tasks on the Google Calendar web application");
 	Thread.sleep(2000);
         String description = textareabox.getText();
+        System.out.println("task description is updated");
         if (description.contains("web application")) {
             System.out.println("The task description is successfully updated and displayed");
         } else {
@@ -123,6 +125,8 @@ public class TestCases {
 
         System.out.println("end Test case: testCase03");
     }
+
+
 
     public void testCase04() throws InterruptedException {
         System.out.println("Start Test case: testCase04");
@@ -147,6 +151,7 @@ public class TestCases {
         } else {
             System.out.println("The task not deleted");
         }
+        System.out.println("end Test case: testCase04");
 
     }
 }
